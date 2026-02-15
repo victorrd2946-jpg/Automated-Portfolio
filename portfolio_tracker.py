@@ -7,7 +7,7 @@ import os
 # Aquí sumamos el EFECTIVO (CASH) y todos tus activos.
 # He puesto 0.00 en CASH, cámbialo por lo que tengas disponible.
 mis_activos = {
-    "CASH": 0.00,
+    "CASH": 151.92,
     "NVDA": 9.51376,
     "META": 0.55874,
     "VOO": 0.52598,
@@ -52,4 +52,5 @@ try:
 
 except Exception as e:
     print(f"Error al procesar los datos: {e}")
+
 
