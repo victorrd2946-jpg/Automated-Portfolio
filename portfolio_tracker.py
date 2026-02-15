@@ -7,9 +7,16 @@ import os
 # Aquí sumamos el EFECTIVO (CASH) y todos tus activos.
 # He puesto 0.00 en CASH, cámbialo por lo que tengas disponible.
 mis_activos = {
-  "CASH": 0.00, "NVDA": 9.51376, "META": 0.55874, "VOO": 0.52598, 
-    "GLDM": 6.71521, "IBIT": 8.25082, "AMZN": 0.97603,
-    "SHOP": 1.83032, "DUOL": 3.93319, "SGOV": 5.33698
+    "CASH": 0.00,
+    "NVDA": 9.51376,
+    "META": 0.55874,
+    "VOO": 0.52598,
+    "GLDM": 6.71521,
+    "IBIT": 8.25082,
+    "AMZN": 0.97603,
+    "SHOP": 1.83032,
+    "DUOL": 3.93319,
+    "SGOV": 5.33698
 }
 
 # Filtramos solo los tickers que existen en Yahoo Finance (excluimos CASH)
@@ -45,3 +52,4 @@ try:
 
 except Exception as e:
     print(f"Error al procesar los datos: {e}")
+
