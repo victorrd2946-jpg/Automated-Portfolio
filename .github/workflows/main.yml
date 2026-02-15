@@ -1,0 +1,33 @@
+name: Actualizar Historial del Portafolio
+
+on:
+  schedule:
+    - cron: '0 21 * * 1-5' # Se ejecuta a las 5:00 PM (hora RD aprox) de lunes a viernes
+  workflow_dispatch: # Permite que lo corras manualmente cuando quieras
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar librerías
+        run: |
+          pip install -r requirements.txt
+
+      - name: Ejecutar Script de Portafolio
+        run: python portfolio_tracker.py
+
+      - name: Guardar cambios en el historial
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add portfolio_history.csv
+          git commit -m "Actualización diaria automática" || echo "Sin cambios"
+          git push
