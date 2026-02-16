@@ -15,7 +15,7 @@ mis_acciones = {
     "AMZN": 0.97603,
     "SHOP": 1.83032,
     "SGOV": 5.33698,
-    "DUOL": 0.97603
+    "DUOL": 3.93319
 }
 
 tickers = list(mis_acciones.keys())
@@ -46,3 +46,4 @@ try:
 
 except Exception as e:
     print(f"Error al procesar: {e}")
+
